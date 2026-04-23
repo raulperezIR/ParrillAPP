@@ -12,8 +12,17 @@ El starter ya tiene estructura, tipos y componentes base — tu trabajo es compl
 
 ## Setup (1 minuto)
 
+**macOS / Linux / WSL:**
 ```bash
+cd planificador-asado-starter
 bash setup.sh
+npm run dev
+```
+
+**Windows (PowerShell):**
+```powershell
+cd planificador-asado-starter
+.\setup.ps1
 npm run dev
 ```
 
