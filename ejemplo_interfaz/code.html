@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Asado App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#92001c",
+                        "secondary-container": "#ddddf9",
+                        "primary": "#b7102a",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#bb152c",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#e4bebc",
+                        "on-primary-fixed": "#410007",
+                        "secondary-fixed-dim": "#c4c4df",
+                        "surface-variant": "#e6e2dc",
+                        "primary-fixed": "#ffdad8",
+                        "secondary": "#5b5d74",
+                        "tertiary": "#7b542b",
+                        "inverse-surface": "#31302d",
+                        "on-surface": "#1c1c18",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e0e0fc",
+                        "surface-dim": "#dddad4",
+                        "on-background": "#1c1c18",
+                        "on-tertiary-fixed-variant": "#623f18",
+                        "tertiary-fixed-dim": "#f0bd8b",
+                        "on-secondary-fixed-variant": "#43455b",
+                        "surface-container-highest": "#e6e2dc",
+                        "on-secondary-container": "#5f6178",
+                        "surface-container": "#f1ede7",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ebe8e2",
+                        "outline": "#8f6f6e",
+                        "surface-container-low": "#f7f3ed",
+                        "inverse-primary": "#ffb3b1",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdcbd",
+                        "surface": "#fdf9f3",
+                        "surface-bright": "#fdf9f3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#181a2e",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#2c1600",
+                        "background": "#fdf9f3",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#966c41",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f4f0ea",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#db313f",
+                        "on-surface-variant": "#5b403f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Be Vietnam Pro"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "caption": ["Be Vietnam Pro"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#FDFCFB] dark:bg-[#121212] border-b-2 border-stone-900/10 dark:border-stone-100/10 flat no-shadows">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E63946] text-3xl">local_fire_department</span>
+<h1 class="text-2xl font-black text-[#E63946] font-['Plus_Jakarta_SANS'] uppercase tracking-tight">Asado App</h1>
+</div>
+<div class="flex items-center gap-4 hidden md:flex">
+<nav class="flex gap-6">
+<a class="text-[#E63946] font-label-bold text-label-bold uppercase tracking-tight hover:text-[#E63946] transition-colors active:scale-95 duration-200" href="#invitados">Invitados</a>
+<a class="text-stone-500 font-label-bold text-label-bold uppercase tracking-tight hover:text-[#E63946] transition-colors active:scale-95 duration-200" href="#gastos">Gastos</a>
+<a class="text-stone-500 font-label-bold text-label-bold uppercase tracking-tight hover:text-[#E63946] transition-colors active:scale-95 duration-200" href="#cuentas">Cuentas</a>
+</nav>
+</div>
+<div class="flex gap-4">
+<button class="text-[#E63946] hover:bg-stone-100 p-2 rounded-full transition-colors active:scale-95 duration-200 md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="text-[#E63946] hover:bg-stone-100 p-2 rounded-full transition-colors active:scale-95 duration-200 hidden md:block">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-lg py-8 space-y-xl">
+<!-- Hero / Termómetro -->
+<section class="bg-surface-container rounded-xl p-md border border-stone-900/10 shadow-sm relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80')] bg-cover bg-center" data-alt="close up of hot glowing charcoal briquettes with orange flames in a dark barbecue grill"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">¡Fuego encendido!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Faltan 2 horas para arrancar. ¿Todo listo?</p>
+</div>
+<div class="w-full md:w-1/2">
+<div class="flex justify-between font-caption text-caption text-on-surface-variant mb-2">
+<span>Preparando</span>
+<span>En la parrilla</span>
+<span class="font-bold text-primary">¡A comer!</span>
+</div>
+<div class="h-4 bg-surface-variant rounded-full overflow-hidden border border-stone-900/10">
+<div class="h-full w-3/4 bg-gradient-to-r from-orange-400 to-primary rounded-full relative">
+<span class="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 text-white text-xs mr-1">local_fire_department</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- 1. Invitados -->
+<section class="lg:col-span-1 bg-surface-container-low rounded-xl border border-stone-900/10 p-md flex flex-col h-[600px]" id="invitados">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">group</span> Invitados
+                    </h3>
+<span class="bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold px-3 py-1 rounded-full">8/10</span>
+</div>
+<div class="flex-grow overflow-y-auto space-y-4 pr-2">
+<div class="mb-4">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant mb-3 uppercase tracking-wider text-xs">Confirmados</h4>
+<div class="space-y-3">
+<!-- Card Amigo -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-lg border border-stone-900/10">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="portrait of a smiling young man outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8a8iTjpbGwQf-SD5mhMT3Hrq7VqhkrY-17QdcP3UVLGDGdkAV3zMk-Rzq1Ni8MF4o2KdvACtoJgF10RF-mIYWSRFXRaa86glccCL8ewpmzDahMiPaBsf7yxlFwIA_zeyuPry2KFGpc_GuBh9BBMjrx0yBT0HT8Z8avqwuyZ4LVFjMroWEYmPQ45y0WodfG6bQPnhy_uoBQahEYhc7p5eoXLinA36Y0oA57uZV9uqaJL5DF2wVsfC5ccoUcDADj5c82S_B4IBBfTg"/>
+<span class="font-body-lg text-body-lg font-bold">Nico</span>
+</div>
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+</div>
+<!-- Card Amigo -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-lg border border-stone-900/10">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="portrait of a young woman laughing in a park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWGGdERoDnf8pNn7xAK8ID5hD-638fQvoMaw9Ddodqw6fUKMRjLu3ClkRI6BHjN6Jpq38dMrhUMekTlSP459KPe0-QFJLpIbclQyJvlj0QbjlKl3YSWPhOMfTqGNtzAFlu4U09HMfog5z1qbd_kfImL_cVyJkqbutaAkPM3XwclYq-McJzoZoPMlPESCPFAJ8cjP8hrmjnmuRnzpcnTcUuRkdxxXT4GjtciWhOCua2RWYl5YmHUec0IhisIQQN8szs8g2XV-Q2CL0"/>
+<span class="font-body-lg text-body-lg font-bold">Juli</span>
+</div>
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+</div>
+<!-- Card Amigo -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-lg border border-stone-900/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-lg border-2 border-secondary">M</div>
+<span class="font-body-lg text-body-lg font-bold">Martín</span>
+</div>
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface-variant mb-3 uppercase tracking-wider text-xs">Pendientes</h4>
+<div class="space-y-3 opacity-70">
+<!-- Card Amigo -->
+<div class="flex items-center justify-between bg-surface p-3 rounded-lg border border-stone-900/10 border-dashed">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-stone-300 grayscale object-cover" data-alt="headshot of a man with glasses looking slightly confused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAumDS5JD6fVzVKY4Ajm8nRNz2MH_zV5CC-euIzSrzYK9xEryA6PFYHHEh9sSR8EUs-QzOprQZV4XWwozqUCoLy7Mr7w2g6WFv8l9SknduNRt0UxfRgbhekKvtnzX6uyrD4gO_uctB5hjJrE2dVyKYaId7839H-hGwtd5PAxZrvkFlnbeHioAFqX3nkp01i2kZvPNKt5USCTXqIQTaR2sIxefnwcWKYz1oqkj51p7c1e6vzXAwyVRofFcLR8S3OJ1J9LG-AhrXAvAE"/>
+<span class="font-body-lg text-body-lg text-stone-500">Fede (Llega tarde)</span>
+</div>
+<span class="material-symbols-outlined text-stone-400">help</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full h-12 bg-surface text-on-surface border-2 border-stone-900/10 rounded-lg font-label-bold text-label-bold flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">person_add</span> Agregar invitado
+                </button>
+</section>
+<!-- 2. Gastos -->
+<section class="lg:col-span-1 bg-surface-container-low rounded-xl border border-stone-900/10 p-md flex flex-col h-[600px]" id="gastos">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">receipt_long</span> Gastos
+                    </h3>
+<div class="text-right">
+<p class="font-caption text-caption text-on-surface-variant">Total acumulado</p>
+<p class="font-headline-md text-headline-md text-primary">$45.000</p>
+</div>
+</div>
+<div class="flex-grow overflow-y-auto space-y-3 pr-2">
+<!-- Gasto Card -->
+<div class="bg-surface p-4 rounded-lg border border-stone-900/10 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-12 h-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/20 text-4xl rotate-12">set_meal</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<div>
+<h4 class="font-body-lg text-body-lg font-bold">Carnes y Chorizos</h4>
+<p class="font-caption text-caption text-on-surface-variant">Compró: Nico</p>
+</div>
+<span class="font-body-lg text-body-lg font-bold text-on-surface">$25.000</span>
+</div>
+<div class="flex gap-2 mt-1 z-10">
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-bold">Vacío</span>
+<span class="bg-tertiary/10 text-tertiary text-xs px-2 py-1 rounded font-bold">Asado</span>
+</div>
+</div>
+<!-- Gasto Card -->
+<div class="bg-surface p-4 rounded-lg border border-stone-900/10 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-12 h-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/20 text-4xl rotate-12">sports_bar</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<div>
+<h4 class="font-body-lg text-body-lg font-bold">Bebidas</h4>
+<p class="font-caption text-caption text-on-surface-variant">Compró: Juli</p>
+</div>
+<span class="font-body-lg text-body-lg font-bold text-on-surface">$15.000</span>
+</div>
+</div>
+<!-- Gasto Card -->
+<div class="bg-surface p-4 rounded-lg border border-stone-900/10 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-12 h-full bg-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/20 text-4xl rotate-12">local_fire_department</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<div>
+<h4 class="font-body-lg text-body-lg font-bold">Carbón y Leña</h4>
+<p class="font-caption text-caption text-on-surface-variant">Compró: Nico</p>
+</div>
+<span class="font-body-lg text-body-lg font-bold text-on-surface">$5.000</span>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full h-12 bg-primary text-on-primary rounded-lg font-label-bold text-label-bold flex items-center justify-center gap-2 hover:bg-surface-tint shadow-[0_4px_14px_0_rgba(183,16,42,0.39)] transition-all active:scale-95">
+<span class="material-symbols-outlined">add_circle</span> Registrar Gasto
+                </button>
+</section>
+<!-- 3. Cuentas -->
+<section class="lg:col-span-1 bg-surface-container-low rounded-xl border border-stone-900/10 p-md flex flex-col h-[600px] relative overflow-hidden" id="cuentas">
+<!-- Fondo decorativo -->
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">payments</span>
+</div>
+<div class="flex justify-between items-center mb-6 z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">payments</span> Cuentas
+                    </h3>
+</div>
+<div class="bg-surface p-6 rounded-xl border-2 border-stone-900/10 mb-6 text-center shadow-sm z-10">
+<p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase tracking-widest">Total por persona</p>
+<p class="font-display-lg text-display-lg text-on-surface">$5.625</p>
+<p class="font-caption text-caption text-stone-500 mt-2">(8 invitados confirmados)</p>
+</div>
+<h4 class="font-label-bold text-label-bold text-on-surface-variant mb-4 uppercase tracking-wider text-xs z-10">Saldos pendientes</h4>
+<div class="flex-grow overflow-y-auto space-y-3 z-10">
+<!-- Deuda Item -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3 rounded-lg border border-stone-900/10">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-bold">Martín</span>
+<span class="material-symbols-outlined text-stone-400 text-sm">arrow_forward</span>
+<span class="font-body-md text-body-md font-bold text-primary">Nico</span>
+</div>
+<span class="font-label-bold text-label-bold bg-surface-variant px-2 py-1 rounded">$5.625</span>
+</div>
+<!-- Deuda Item -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3 rounded-lg border border-stone-900/10">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-bold">Juli</span>
+<span class="material-symbols-outlined text-stone-400 text-sm">arrow_forward</span>
+<span class="font-body-md text-body-md font-bold text-primary">Nico</span>
+</div>
+<span class="font-label-bold text-label-bold bg-surface-variant px-2 py-1 rounded">$1.250</span>
+</div>
+</div>
+<button class="mt-6 w-full h-12 bg-secondary text-on-secondary rounded-lg font-label-bold text-label-bold flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors z-10">
+<span class="material-symbols-outlined">share</span> Compartir Resumen
+                </button>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-16 px-4 bg-[#FDFCFB] dark:bg-[#121212] border-t-2 border-stone-900/10 dark:border-stone-100/10 md:hidden">
+<a class="flex flex-col items-center justify-center text-[#E63946] border-t-4 border-[#E63946] pt-1 w-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-90 duration-150" href="#invitados">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Plus_Jakarta_SANS'] text-xs font-bold mt-1">Invitados</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 pt-2 w-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-90 duration-150" href="#gastos">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Plus_Jakarta_SANS'] text-xs font-bold mt-1">Gastos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 pt-2 w-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-90 duration-150" href="#cuentas">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-['Plus_Jakarta_SANS'] text-xs font-bold mt-1">Cuentas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 pt-2 w-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">fireplace</span>
+<span class="font-['Plus_Jakarta_SANS'] text-xs font-bold mt-1">El Fuego</span>
+</a>
+</nav>
+</body></html>
